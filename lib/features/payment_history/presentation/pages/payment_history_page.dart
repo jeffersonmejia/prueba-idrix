@@ -79,8 +79,8 @@ class PaymentHistoryPage extends StatelessWidget {
                     executed: 'SI',
                     protested: 'SI',
                     color: const Color(0xFF1F8F6C),
-                    textColor: const Color(0xFF1C3D68),
-                    titleColor: const Color(0xFF1C3D68),
+                    textColor: Colors.white,
+                    titleColor: Colors.white,
                   ),
                   const SizedBox(height: 18),
                   PaymentHistoryCard(
