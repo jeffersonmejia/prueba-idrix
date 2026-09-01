@@ -1,6 +1,7 @@
 library;
 
 import 'package:flutter/material.dart';
+import 'package:idrix_ui/core/theme/app_theme.dart';
 
 part '../widgets/account_statement_client.dart';
 part '../widgets/account_statement_header.dart';
@@ -19,13 +20,14 @@ class AccountStatementPage extends StatelessWidget {
         children: [
           Container(
             height: top + 72,
-            padding: EdgeInsets.fromLTRB(22, top + 18, 22, 14),
+            padding: EdgeInsets.fromLTRB(
+              AppDimensions.pageHorizontalPadding,
+              top + 18,
+              AppDimensions.pageHorizontalPadding,
+              14,
+            ),
             decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
-                colors: [Color(0xFF0785B8), Color(0xFF0876A5)],
-              ),
+              gradient: AppPalette.topBarGradient,
             ),
             child: Row(
               children: [
@@ -38,25 +40,26 @@ class AccountStatementPage extends StatelessWidget {
                     icon: const Icon(
                       Icons.arrow_back_rounded,
                       color: Colors.white,
-                      size: 16,
+                      size: AppDimensions.iconSmall,
                     ),
                   ),
                 ),
                 const SizedBox(width: 13),
                 const Text(
                   'Estado de Cuenta',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 16,
-                    fontWeight: FontWeight.w700,
-                  ),
+                  style: AppTextStyles.appBarTitle,
                 ),
               ],
             ),
           ),
           Expanded(
             child: SingleChildScrollView(
-              padding: const EdgeInsets.fromLTRB(22, 24, 22, 38),
+              padding: const EdgeInsets.fromLTRB(
+                AppDimensions.pageHorizontalPadding,
+                24,
+                AppDimensions.pageHorizontalPadding,
+                38,
+              ),
               child: const Column(
                 children: [
                   _HeroBanner(),

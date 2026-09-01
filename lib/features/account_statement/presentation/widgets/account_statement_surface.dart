@@ -43,8 +43,8 @@ class _Surface extends StatelessWidget {
     width: double.infinity,
     padding: padding,
     decoration: BoxDecoration(
-      color: Colors.white,
-      borderRadius: BorderRadius.circular(24),
+      color: AppPalette.surface,
+      borderRadius: BorderRadius.circular(AppDimensions.radiusLarge),
       boxShadow: const [
         BoxShadow(
           color: Color(0x08000000),
@@ -66,16 +66,9 @@ class _SectionTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Row(
     children: [
-      Icon(icon, color: const Color(0xFF087EAF), size: 30),
+      Icon(icon, color: AppPalette.primary, size: AppDimensions.iconLarge),
       const SizedBox(width: 16),
-      Text(
-        label,
-        style: const TextStyle(
-          color: Color(0xFF39424E),
-          fontSize: 17,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
+      Text(label, style: AppTextStyles.sectionTitle),
     ],
   );
 }

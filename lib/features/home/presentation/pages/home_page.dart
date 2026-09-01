@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:idrix_ui/features/account_statement/presentation/pages/account_statement_page.dart';
 import 'package:idrix_ui/features/home/domain/home_module.dart';
 import 'package:idrix_ui/features/home/presentation/widgets/home_module_card.dart';
+import 'package:idrix_ui/features/product_breakdown/presentation/pages/product_breakdown_page.dart';
+import 'package:idrix_ui/features/portfolio/presentation/pages/portfolio_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -89,13 +91,18 @@ class HomePage extends StatelessWidget {
                         ),
                     itemBuilder: (context, index) => HomeModuleCard(
                       module: homeModules[index],
-                      onTap: index == 0
-                          ? () => Navigator.of(context).push(
-                              MaterialPageRoute<void>(
-                                builder: (_) => const AccountStatementPage(),
-                              ),
-                            )
-                          : null,
+                      onTap: switch (index) {
+                        0 => () => _openPage(
+                          context,
+                          const AccountStatementPage(),
+                        ),
+                        1 => () => _openPage(
+                          context,
+                          const ProductBreakdownPage(),
+                        ),
+                        2 => () => _openPage(context, const PortfolioPage()),
+                        _ => null,
+                      },
                     ),
                   ),
                 ],
@@ -106,4 +113,7 @@ class HomePage extends StatelessWidget {
       ),
     );
   }
+
+  void _openPage(BuildContext context, Widget page) =>
+      Navigator.of(context).push(MaterialPageRoute<void>(builder: (_) => page));
 }

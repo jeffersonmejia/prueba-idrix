@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'package:idrix_ui/core/theme/app_theme.dart';
 import 'package:idrix_ui/features/home/presentation/pages/home_page.dart';
 
 class IdrixApp extends StatelessWidget {
@@ -9,11 +10,7 @@ class IdrixApp extends StatelessWidget {
   Widget build(BuildContext context) => MaterialApp(
     debugShowCheckedModeBanner: false,
     title: 'Estado de Cuenta',
-    theme: ThemeData(
-      useMaterial3: true,
-      fontFamily: 'Roboto',
-      scaffoldBackgroundColor: const Color(0xFFF8FAFB),
-    ),
+    theme: AppTheme.light,
     builder: (context, child) => MediaQuery(
       data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
       child: child!,
