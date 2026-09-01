@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../features/account_statement/presentation/pages/account_statement_page.dart';
+import 'package:idrix_ui/features/home/presentation/pages/home_page.dart';
 
 class IdrixApp extends StatelessWidget {
   const IdrixApp({super.key});
@@ -18,6 +18,6 @@ class IdrixApp extends StatelessWidget {
       data: MediaQuery.of(context).copyWith(textScaler: TextScaler.noScaling),
       child: child!,
     ),
-    home: const AccountStatementPage(),
+    home: const HomePage(),
   );
 }
