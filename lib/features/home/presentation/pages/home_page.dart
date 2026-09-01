@@ -7,6 +7,7 @@ import 'package:idrix_ui/features/home/presentation/widgets/home_module_card.dar
 import 'package:idrix_ui/features/product_breakdown/presentation/pages/product_breakdown_page.dart';
 import 'package:idrix_ui/features/technical_sheet/presentation/pages/technical_sheet_page.dart';
 import 'package:idrix_ui/features/sales_kpis/presentation/pages/sales_kpis_page.dart';
+import 'package:idrix_ui/features/payment_history/presentation/pages/payment_history_page.dart';
 import 'package:idrix_ui/features/portfolio/presentation/pages/portfolio_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -110,6 +111,7 @@ class HomePage extends StatelessWidget {
                         ),
                         4 => () => _openPage(context, const MaintenancePage()),
                         5 => () => _openPage(context, const SalesKpisPage()),
+                        6 => () => _openPage(context, const PaymentHistoryPage()),
                         _ => null,
                       },
                     ),

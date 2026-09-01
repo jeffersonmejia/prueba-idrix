@@ -51,4 +51,10 @@ const homeModules = [
     icon: Icons.insights_outlined,
     color: Color(0xFF4776BA),
   ),
+  HomeModule(
+    title: 'Historial de Pagos',
+    description: 'Consulta pagos, cheques y transferencias',
+    icon: Icons.receipt_long_rounded,
+    color: Color(0xFF3A6D9E),
+  ),
 ];
