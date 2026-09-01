@@ -19,22 +19,21 @@ class PaymentHistoryPage extends StatelessWidget {
             ),
             child: Row(
               children: [
-                const Expanded(
-                  child: Text(
-                    'Historial de Pagos',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 34,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  ),
-                ),
                 IconButton(
                   onPressed: () => Navigator.of(context).pop(),
                   icon: const Icon(
-                    Icons.close_rounded,
+                    Icons.arrow_back_rounded,
                     color: Colors.white,
                     size: 30,
+                  ),
+                ),
+                const SizedBox(width: 4),
+                const Text(
+                  'Historial de Pagos',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 27,
+                    fontWeight: FontWeight.w800,
                   ),
                 ),
               ],
@@ -64,9 +63,11 @@ class PaymentHistoryPage extends StatelessWidget {
                     date: '15/12/2025',
                     checkNumber: '3652',
                     value: '\$724.45',
-                    executed: 'NO',
-                    protested: 'NO',
+                    executed: 'SI',
+                    protested: 'SI',
                     color: const Color(0xFFF5D64A),
+                    textColor: const Color(0xFF1C3D68),
+                    titleColor: const Color(0xFF1C3D68),
                   ),
                   const SizedBox(height: 18),
                   PaymentHistoryCard(
@@ -76,8 +77,10 @@ class PaymentHistoryPage extends StatelessWidget {
                     checkNumber: '7891',
                     value: '\$1200.00',
                     executed: 'SI',
-                    protested: 'NO',
+                    protested: 'SI',
                     color: const Color(0xFF1F8F6C),
+                    textColor: const Color(0xFF1C3D68),
+                    titleColor: const Color(0xFF1C3D68),
                   ),
                   const SizedBox(height: 18),
                   PaymentHistoryCard(
@@ -86,9 +89,11 @@ class PaymentHistoryPage extends StatelessWidget {
                     date: '14/12/2025',
                     checkNumber: '',
                     value: '\$850.50',
-                    executed: '',
-                    protested: '',
+                    executed: 'SI',
+                    protested: 'SI',
                     color: const Color(0xFF4D54A9),
+                    textColor: Colors.white,
+                    titleColor: Colors.white,
                   ),
                 ],
               ),

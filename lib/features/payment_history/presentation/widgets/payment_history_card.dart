@@ -10,6 +10,8 @@ class PaymentHistoryCard extends StatelessWidget {
     required this.executed,
     required this.protested,
     required this.color,
+    required this.textColor,
+    required this.titleColor,
     super.key,
   });
 
@@ -21,6 +23,8 @@ class PaymentHistoryCard extends StatelessWidget {
   final String executed;
   final String protested;
   final Color color;
+  final Color textColor;
+  final Color titleColor;
 
   @override
   Widget build(BuildContext context) => Container(
@@ -51,8 +55,8 @@ class PaymentHistoryCard extends StatelessWidget {
             Expanded(
               child: Text(
                 bankName,
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: titleColor,
                   fontSize: 21,
                   fontWeight: FontWeight.w800,
                   height: 1.1,
@@ -67,8 +71,8 @@ class PaymentHistoryCard extends StatelessWidget {
               ),
               child: Text(
                 kind.toUpperCase(),
-                style: const TextStyle(
-                  color: Colors.white,
+                style: TextStyle(
+                  color: textColor,
                   fontSize: 12,
                   fontWeight: FontWeight.w700,
                 ),
@@ -77,11 +81,11 @@ class PaymentHistoryCard extends StatelessWidget {
           ],
         ),
         const SizedBox(height: 16),
-        _InfoRow(label: 'Fecha:', value: date),
-        if (checkNumber.isNotEmpty) _InfoRow(label: 'Cheque N°:', value: checkNumber),
-        _InfoRow(label: 'Valor:', value: value, valueStyle: const TextStyle(fontWeight: FontWeight.w800)),
-        _InfoRow(label: 'Ejecutado:', value: executed),
-        _InfoRow(label: 'Protestado:', value: protested),
+        _InfoRow(label: 'Fecha:', value: date, textColor: textColor),
+        if (checkNumber.isNotEmpty) _InfoRow(label: 'Cheque N°:', value: checkNumber, textColor: textColor),
+        _InfoRow(label: 'Valor:', value: value, textColor: textColor, valueStyle: TextStyle(fontWeight: FontWeight.w800, color: textColor)),
+        _InfoRow(label: 'Ejecutado:', value: executed, textColor: textColor),
+        _InfoRow(label: 'Protestado:', value: protested, textColor: textColor),
       ],
     ),
   );
@@ -91,11 +95,13 @@ class _InfoRow extends StatelessWidget {
   const _InfoRow({
     required this.label,
     required this.value,
+    required this.textColor,
     this.valueStyle,
   });
 
   final String label;
   final String value;
+  final Color textColor;
   final TextStyle? valueStyle;
 
   @override
@@ -106,8 +112,8 @@ class _InfoRow extends StatelessWidget {
         Expanded(
           child: Text(
             label,
-            style: const TextStyle(
-              color: Colors.white,
+            style: TextStyle(
+              color: textColor,
               fontSize: 18,
               fontWeight: FontWeight.w600,
             ),
@@ -115,8 +121,8 @@ class _InfoRow extends StatelessWidget {
         ),
         Text(
           value,
-          style: valueStyle ?? const TextStyle(
-            color: Colors.white,
+          style: valueStyle ?? TextStyle(
+            color: textColor,
             fontSize: 18,
             fontWeight: FontWeight.w700,
           ),
